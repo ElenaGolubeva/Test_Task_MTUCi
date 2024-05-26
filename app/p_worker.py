@@ -30,8 +30,8 @@ def create_data(data: WordsModel):
     for item in data.words:
         cursor.execute("INSERT INTO words (word) VALUES (%s)", (item,))
         conn.commit()
-
-        return {"Status": "OK"}
+    return {"Status": "OK"}
+    
     
     '''
     cursor.execute("Select * FROM data")

@@ -1,0 +1,16 @@
+﻿   version: '3'
+   services:
+     app:
+       build: .
+       ports:
+         - "8000:8000"
+       depends_on:
+         - postgres
+     postgres:
+       image: postgres:latest
+       environment:
+        - POSTGRES_USER=lena
+        - POSTGRES_PASSWORD=mypassword
+        - POSTGRES_DB=wordsdb
+
+
