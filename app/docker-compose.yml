@@ -12,5 +12,10 @@
         - POSTGRES_USER=lena
         - POSTGRES_PASSWORD=mypassword
         - POSTGRES_DB=wordsdb
-
+       healthcheck:
+        test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
+        interval: 10s
+        timeout: 5s
+        retries: 3
+        start_period: 30s
 
